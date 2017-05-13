@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="a.itcast.mobileplayer95.activity.MainActivity">
+
+    <!--android.support.design.widget.AppBarLayout:可以使用内部子控件具备的标题栏显示风格-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--?actionBarSize:引用主题里面的ActionBard的大小-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <!--<LinearLayout-->
+                <!--android:gravity="right"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_height="match_parent">-->
+                <!--<ImageView-->
+                    <!--android:layout_gravity="right|center_vertical"-->
+                    <!--android:src="@drawable/ic_settings_white_18dp"-->
+                    <!--android:paddingRight="14dp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content" />-->
+            <!--</LinearLayout>-->
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--正文的容器-->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+</LinearLayout>
