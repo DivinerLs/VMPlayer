@@ -17,6 +17,8 @@ import a.itcast.mobileplayer95.R;
 
 public class TestFragment extends Fragment {
 
+    private static final String TAG = "TestFragment";
+
     public static TestFragment getInstance(String content){
         //填充初始化参数
         Bundle args = new Bundle();
