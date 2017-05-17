@@ -12,48 +12,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.5.1_f9edf408bdb561b4fd014edd6df2dffef6f64648.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Magic/android-sdks/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.0-beta3/constraint-layout-solver-1.0.0-beta3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="22c1e9d26251df254de7cc9dee01f5f134b10eba">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.0-beta3_998ceccd1d33bbac31469ecde0c9778b4673dfd5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/design/25.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-design-25.3.0_e1a8f0a6a3cdfe4cb1ec2d14fbf9c8da747e1333.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/Magic/android-sdks/extras/android/m2repository/com/android/support/support-annotations/25.3.0/support-annotations-25.3.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
         <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/support-annotations-25.3.0_d0ed7cebe18e44a114d5fcf78b3745aee547503e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.3.0_b398c9e040a5fa29c92a20e159b2be632d0b3df3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -81,15 +45,6 @@
         revision="25.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.3.0_63c8904d0d17143ec9b6284cd31460b23e3a5fcc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/transition/25.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-transition-25.3.0_b027f47594dfa99b60e75a175f6673850e4ab28b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -129,6 +84,60 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.0-beta3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b81d40d208a3308c8e81b2cccd3054238a13d140">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support.constraint-constraint-layout-1.0.0-beta3_fd556bada286a71409b3127e451813f6e1e6dc4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.5.1_f9edf408bdb561b4fd014edd6df2dffef6f64648.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/android-sdks/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.0-beta3/constraint-layout-solver-1.0.0-beta3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="22c1e9d26251df254de7cc9dee01f5f134b10eba">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.0-beta3_998ceccd1d33bbac31469ecde0c9778b4673dfd5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/design/25.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-design-25.3.0_e1a8f0a6a3cdfe4cb1ec2d14fbf9c8da747e1333.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.3.0_b398c9e040a5fa29c92a20e159b2be632d0b3df3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/transition/25.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support-transition-25.3.0_b027f47594dfa99b60e75a175f6673850e4ab28b.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -153,15 +162,6 @@
         revision="25.0.0"
         sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
         <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/butterknife-annotations-8.5.1_d01b96fad97479af235cf6dd83e28003e542eeea.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.0-beta3/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b81d40d208a3308c8e81b2cccd3054238a13d140">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/pre-dexed/debug/com.android.support.constraint-constraint-layout-1.0.0-beta3_fd556bada286a71409b3127e451813f6e1e6dc4c.jar" />
     </item>
 
 </items>

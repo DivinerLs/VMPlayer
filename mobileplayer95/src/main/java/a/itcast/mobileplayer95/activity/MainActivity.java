@@ -3,8 +3,12 @@ package a.itcast.mobileplayer95.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,13 +16,19 @@ import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
 import a.itcast.mobileplayer95.R;
+import a.itcast.mobileplayer95.fargment.HomeFragment;
+import a.itcast.mobileplayer95.fargment.TestFragment;
+import a.itcast.mobileplayer95.utils.LogUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
+
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    private SparseArray<Fragment> sparseArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //修改ToolBar的属性
         getSupportActionBar().setTitle("VMPlayer");
+
+        //初始化 Fragment集合
+        sparseArray = new SparseArray<>();
+        sparseArray.append(R.id.bottombar_home,new HomeFragment());
+        sparseArray.append(R.id.bottombar_mv,TestFragment.newInstance("MV"));
+        sparseArray.append(R.id.bottombar_vbang,TestFragment.newInstance("V榜"));
+        sparseArray.append(R.id.bottombar_yuedan,TestFragment.newInstance("悦单"));
 
         //处理底部栏  attach:表示把我当前底部栏附加到一个界面上去
         //savedInstanceState:用来界面销毁时来保存数据用的.
@@ -63,13 +80,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static class OnMainMenuTabClickListener implements OnMenuTabClickListener {
+    private class OnMainMenuTabClickListener implements OnMenuTabClickListener {
         @Override
         /**
          * 选中了某一个 Tap
          */
         public void onMenuTabSelected(@IdRes int menuItemId) {
 //                Toast.makeText(MainActivity.this, "选中了一个 条目", Toast.LENGTH_SHORT).show();
+//            Fragment fragment = TestFragment.newInstance("这是一个测试界面");
+
+            //切换到当前按钮对应的Fragment
+            Fragment fragment = sparseArray.get(menuItemId);
+            switchFragment(fragment);
         }
 
         @Override
@@ -80,4 +102,19 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, "重复选中了一个 条目", Toast.LENGTH_SHORT).show();
         }
     }
+    /**
+     * 将参数里的Fragment 显示出来
+     * @param fragment
+     */
+    private void switchFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container,fragment);
+
+
+
+        transaction.commit();
+    }
+
+
 }

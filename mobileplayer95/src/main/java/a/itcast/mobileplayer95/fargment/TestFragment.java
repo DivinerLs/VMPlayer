@@ -17,9 +17,12 @@ import a.itcast.mobileplayer95.R;
 
 public class TestFragment extends Fragment {
 
-    private static final String TAG = "TestFragment";
-
-    public static TestFragment getInstance(String content){
+    /**
+     * 获取Fragment 对象
+     * @param content
+     * @return
+     */
+    public static TestFragment newInstance(String content){
         //填充初始化参数
         Bundle args = new Bundle();
         args.putString("content",content);
@@ -32,7 +35,7 @@ public class TestFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_test, null);
+        View view = inflater.inflate(R.layout.fragment_home, null);
 
         TextView tv_text = (TextView) view.findViewById(R.id.tv_text);
 
