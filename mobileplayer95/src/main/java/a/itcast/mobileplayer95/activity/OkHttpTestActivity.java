@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.io.IOException;
+import java.util.List;
 
 import a.itcast.mobileplayer95.R;
+import a.itcast.mobileplayer95.bean.AreaBean;
+import a.itcast.mobileplayer95.http.BaseCallBack;
 import a.itcast.mobileplayer95.http.HttpManager;
 import a.itcast.mobileplayer95.utils.LogUtils;
 import a.itcast.mobileplayer95.utils.URLProviderUtil;
@@ -34,17 +37,33 @@ public class OkHttpTestActivity extends AppCompatActivity {
      */
     private void loadData() {
 
-//        String url = "192.168.78.21:8080/1";
-
-        String url = URLProviderUtil.getMainPageUrl(0,10);
-
-        LogUtils.e(TAG,"OkHttpTestActivity.loadData,url="+url);
-
+        String url = "192.168.78.21:8080/1";
+//        String url = URLProviderUtil.getMainPageUrl(0,10);
+//        LogUtils.e(TAG,"OkHttpTestActivity.loadData,url="+url);
+//        String url = URLProviderUtil.getMVareaUrl();
+          LogUtils.e(TAG,"OkHttpTestActivity.loadData,url="+url);
 //        getMethod(url);//自己开子线程访问网络
 //        getInChildThread(url);//okhttp自带的子线程访问网络 (get)
 //        postInChildThread(url);
 
-        HttpManager.getInstance().get(url);
+        HttpManager.getInstance().get(url, new BaseCallBack<List<AreaBean>>() {
+            @Override
+            public void onFailure(int code, Exception e) {
+                LogUtils.e(TAG,"OkHttpTestActivity.onFailure,e="+e);
+            }
+
+//            @Override
+//            public void onSuccess(String s) {
+//                LogUtils.e(TAG,"OkHttpTestActivity.onSuccess,s="+s);
+//            }
+
+            @Override
+            public void onSuccess(List<AreaBean> areaBeen) {
+                LogUtils.e(TAG,"OkHttpTestActivity.onSuccess,areaBeen="+areaBeen.size());
+            }
+
+
+        });
     }
 
     /**

@@ -1,5 +1,8 @@
 package a.itcast.mobileplayer95.http;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -46,19 +49,19 @@ public class HttpManager {
      * @param url
      */
     //单例对象里面方法没必要全部静态
-    public void get(String url){
+    public void get(String url,BaseCallBack baseCallBack){
 
         //创建请求参数
         Request request = new Request.Builder().url(url).build();
 
-        doRequest(request);
+        doRequest(request,baseCallBack);
     }
 
     /**
      * 发起 post 请求
      * @param url
      */
-    public void post(String url, Map<String,String> params)
+    public void post(String url, Map<String,String> params,BaseCallBack baseCallBack)
     {
         //1.创建请求客户端
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -76,12 +79,12 @@ public class HttpManager {
 
         //创建请求参数
         Request request = new Request.Builder().url(url).post(body).build();
-        doRequest(request);
+        doRequest(request,baseCallBack);
 
 
     }
 
-    private void doRequest(Request request) {
+    private void doRequest(final Request request, final BaseCallBack baseCallBack) {
         //创建请求对象
         Call call = okHttpClient.newCall(request);
 
@@ -92,7 +95,8 @@ public class HttpManager {
              * 请求发生异常
              */
             public void onFailure(Call call, IOException e) {
-
+                //BaseCallBack.java
+                baseCallBack.onFailure(-1,e);//-1 是自定义的code码
             }
 
             @Override
@@ -103,8 +107,28 @@ public class HttpManager {
                 if (response.isSuccessful())
                 {
                     String result = response.body().string();
-                    LogUtils.e(TAG,"OkHttpTestActivity.getInChildThread,result="+result);
 
+                    //根据 baseCallBack 的类型的不同,做不同的数据解析
+                    if (baseCallBack.type == String.class)
+                    {
+                        //如果传过来的是一个 String 直接返回String类型的数据
+                        baseCallBack.onSuccess(result);
+                    }else {
+                        try {
+                            //指定了一个 Bean,直接进行 Json 转换
+                            Object obj = new Gson().fromJson(result,baseCallBack.type);
+                            //BaseCallBack.java
+                            baseCallBack.onSuccess(obj);
+                        } catch (Exception e) {
+                            baseCallBack.onFailure(-1,new RuntimeException("JSON解析出错"+result));
+                            e.printStackTrace();
+                        }
+                    }
+
+//                    LogUtils.e(TAG,"OkHttpTestActivity.getInChildThread,result="+result);
+
+                }else {
+                    baseCallBack.onFailure(response.code(),new RuntimeException("获取到服务器的错误状态"));
                 }
             }
         });
