@@ -2,6 +2,7 @@ package a.itcast.mobileplayer95.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,8 +29,8 @@ public class OkHttpTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ok_http);
-
-        loadData();//加载数据
+        //加载数据
+        loadData();
     }
 
     /**
@@ -37,10 +38,9 @@ public class OkHttpTestActivity extends AppCompatActivity {
      */
     private void loadData() {
 
-        String url = "192.168.78.21:8080/1";
+//        String url = "192.168.78.21:8080/1";
 //        String url = URLProviderUtil.getMainPageUrl(0,10);
-//        LogUtils.e(TAG,"OkHttpTestActivity.loadData,url="+url);
-//        String url = URLProviderUtil.getMVareaUrl();
+        String url = URLProviderUtil.getMVareaUrl();
           LogUtils.e(TAG,"OkHttpTestActivity.loadData,url="+url);
 //        getMethod(url);//自己开子线程访问网络
 //        getInChildThread(url);//okhttp自带的子线程访问网络 (get)
@@ -60,6 +60,7 @@ public class OkHttpTestActivity extends AppCompatActivity {
             @Override
             public void onSuccess(List<AreaBean> areaBeen) {
                 LogUtils.e(TAG,"OkHttpTestActivity.onSuccess,areaBeen="+areaBeen.size());
+                Toast.makeText(OkHttpTestActivity.this, "哈哈", Toast.LENGTH_SHORT).show();
             }
 
 

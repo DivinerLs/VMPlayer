@@ -1,10 +1,12 @@
 package a.itcast.mobileplayer95.http;
 
+import android.os.Looper;
+
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.logging.Handler;
 
 import a.itcast.mobileplayer95.utils.LogUtils;
 import okhttp3.Call;
@@ -26,8 +28,11 @@ public class HttpManager {
     private OkHttpClient okHttpClient;
     private static HttpManager httpManager;
 
+    private android.os.Handler mHandler;
+
     private HttpManager() {
         this.okHttpClient = new OkHttpClient();
+        mHandler = new android.os.Handler(Looper.getMainLooper());
     }
 
     /**
@@ -94,42 +99,63 @@ public class HttpManager {
             /**
              * 请求发生异常
              */
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(Call call, final IOException e) {
                 //BaseCallBack.java
-                baseCallBack.onFailure(-1,e);//-1 是自定义的code码
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        baseCallBack.onFailure(-1,e);//-1 是自定义的code码
+                    }
+                });
             }
 
             @Override
             /**
              * 获取到服务器数据,即使是 404 等错误状态 也是 获取到服务器数据了
              */
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful())
-                {
-                    String result = response.body().string();
+            public void onResponse(Call call, final Response response) throws IOException {
 
-                    //根据 baseCallBack 的类型的不同,做不同的数据解析
-                    if (baseCallBack.type == String.class)
-                    {
-                        //如果传过来的是一个 String 直接返回String类型的数据
-                        baseCallBack.onSuccess(result);
-                    }else {
-                        try {
-                            //指定了一个 Bean,直接进行 Json 转换
-                            Object obj = new Gson().fromJson(result,baseCallBack.type);
-                            //BaseCallBack.java
-                            baseCallBack.onSuccess(obj);
-                        } catch (Exception e) {
-                            baseCallBack.onFailure(-1,new RuntimeException("JSON解析出错"+result));
-                            e.printStackTrace();
-                        }
-                    }
+                LogUtils.e(TAG,"HttpManager.onResponse,thread="+Thread.currentThread());
+                //在子线程读取服务器数据
+                final String result = response.body().string();
+                //在主线程更新界面
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.isSuccessful())
+                        {
+                            /*
+                                String result = response.body().string();
+                                这里爆了个异常 IO异常 原因:
+                                调用.string()的时候 它才联网 去把数据读取出来,并且转换成String,返回.
+                                做法:把这行代码放在外面执行
+                             */
+                            //String result = response.body().string();
+
+                            //根据 baseCallBack 的类型的不同,做不同的数据解析
+                            if (baseCallBack.type == String.class)
+                            {
+                                //如果传过来的是一个 String 直接返回String类型的数据
+                                baseCallBack.onSuccess(result);
+                            }else {
+                                try {
+                                    //指定了一个 Bean,直接进行 Json 转换
+                                    Object obj = new Gson().fromJson(result,baseCallBack.type);
+                                    //BaseCallBack.java
+                                    baseCallBack.onSuccess(obj);
+                                } catch (Exception e) {
+                                    baseCallBack.onFailure(-1,new RuntimeException("JSON解析出错"+result));
+                                    e.printStackTrace();
+                                }
+                            }
 
 //                    LogUtils.e(TAG,"OkHttpTestActivity.getInChildThread,result="+result);
 
-                }else {
-                    baseCallBack.onFailure(response.code(),new RuntimeException("获取到服务器的错误状态"));
-                }
+                        }else {
+                            baseCallBack.onFailure(response.code(),new RuntimeException("获取到服务器的错误状态"));
+                        }
+                    }
+                });
             }
         });
     }
