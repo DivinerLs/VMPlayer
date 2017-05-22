@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import a.itcast.mobileplayer95.utils.LogUtils;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 作者：Magic on 2017/5/17 15:06
@@ -17,6 +19,7 @@ import a.itcast.mobileplayer95.utils.LogUtils;
 public abstract class BaseFragment extends Fragment {
 
     protected  View rootView;
+    private Unbinder unbinder;
 
     @Nullable
     @Override
@@ -27,6 +30,8 @@ public abstract class BaseFragment extends Fragment {
         if (rootView == null){
             rootView = inflater.inflate(getLayouId(), null);
         }
+
+        ButterKnife.bind(this,rootView);
 
         initView();
         return rootView;
@@ -43,5 +48,9 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void initView();
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

@@ -1,4 +1,4 @@
-package cn.itcast.mobileplayerbk.utils;
+package cn.itcast.mobileplayerbk.utils;;
 
 import android.util.Log;
 

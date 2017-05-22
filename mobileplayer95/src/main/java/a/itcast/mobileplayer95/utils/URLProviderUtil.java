@@ -15,8 +15,8 @@ public class URLProviderUtil {
 				+ "\"uid\":"
 				+ "\"dbcaa6c4482bc05ecb0bf39dabf207d2\","
 				+ "\"clid\":110025000}"
-//				+ "&offset="+offset
-//				+"&size="+size
+				+ "&osffset="+offset
+				+"&size="+size
 				+"&v=4&rn=640*540";
 		Log.i("Main_url",url);
 		return url;

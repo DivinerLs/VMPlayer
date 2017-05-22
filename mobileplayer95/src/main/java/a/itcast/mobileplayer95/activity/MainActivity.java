@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,9 +15,8 @@ import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
 import a.itcast.mobileplayer95.R;
-import a.itcast.mobileplayer95.fargment.HomeFragment;
+import a.itcast.mobileplayer95.fargment.homepage.HomeFragment;
 import a.itcast.mobileplayer95.fargment.TestFragment;
-import a.itcast.mobileplayer95.utils.LogUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

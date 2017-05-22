@@ -9,6 +9,9 @@ import java.util.List;
 
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.AreaBean;
+import a.itcast.mobileplayer95.bean.VideoBean;
+import a.itcast.mobileplayer95.fargment.homepage.HomeMvp;
+import a.itcast.mobileplayer95.fargment.homepage.HomePresenter;
 import a.itcast.mobileplayer95.http.BaseCallBack;
 import a.itcast.mobileplayer95.http.HttpManager;
 import a.itcast.mobileplayer95.utils.LogUtils;
@@ -30,7 +33,30 @@ public class OkHttpTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ok_http);
         //加载数据
-        loadData();
+//        loadData();
+
+        testHomePresenter();//测试 Presenter 是否可用
+    }
+
+    /**
+     * 测试 Presenter 是否可用
+     */
+    private void testHomePresenter() {
+        HomePresenter presenter = new HomePresenter(new HomeMvp.View() {
+            @Override
+            public void setData(List<VideoBean> videoBeen) {
+                if (videoBeen.size() != 10)
+                {
+                    throw new RuntimeException("请求主页的数据,返回数据不足10个");
+                }
+            }
+
+            @Override
+            public void onError(int code, Exception e) {
+                throw new RuntimeException("错误代码为:"+code+".请求主页的数据,发生异常,e="+e );
+            }
+        });
+        presenter.loadData(0,10);
     }
 
     /**
