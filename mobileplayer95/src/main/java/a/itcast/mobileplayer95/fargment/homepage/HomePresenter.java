@@ -25,8 +25,11 @@ public class HomePresenter implements HomeMvp.Presenter {
 
     @Override
     public void loadData(int offset, int size) {
-        LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据");
+
         String url = URLProviderUtil.getMainPageUrl(offset,size);
+
+        LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据,url="+url);
+
         HttpManager.getInstance().get(url, new BaseCallBack<List<VideoBean>>() {
             @Override
             public void onFailure(int code, Exception e) {

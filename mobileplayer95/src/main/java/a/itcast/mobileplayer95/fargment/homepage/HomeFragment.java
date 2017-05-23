@@ -1,23 +1,19 @@
 package a.itcast.mobileplayer95.fargment.homepage;
 
-import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import a.itcast.mobileplayer95.BaseFragment;
 import a.itcast.mobileplayer95.R;
+import a.itcast.mobileplayer95.adapter.HomeAdapter;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.LogUtils;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -35,6 +31,10 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
     private HomeMvp.Presenter presenter;//HomeMVP
 
+    private HomeAdapter homeAdapter;
+
+    private List<VideoBean> videoBeen;
+
     //生成代码 Command + N | Control + 回车
     public HomeFragment() {
         LogUtils.e(TAG, "HomeFragment.HomeFragment,");
@@ -47,9 +47,8 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
     @Override
     protected void initView() {
-        TextView tv_text = (TextView) rootView.findViewById(R.id.tv_text);
-        //获取初始化参数 content:内容 Arguments:参数
-        tv_text.setText("这是首页的界面");
+
+
 
         // [实现HomeMvp.View接口后] 创建 Presenter
         LogUtils.e(TAG, "HomeFragment.initView,创建 presenter并请求数据");
@@ -63,11 +62,21 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
         //StaggeredGridLayoutManager layout2 = new StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL);//瀑布流
         layout.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerview.setLayoutManager(layout);
+
+        //设置 adapter [适配器]
+
+        videoBeen = new ArrayList<>();
+        homeAdapter = new HomeAdapter(videoBeen);
+        recyclerview.setAdapter(homeAdapter);
     }
 
     @Override
     public void setData(List<VideoBean> videoBeen) {
         LogUtils.e(TAG, "HomeFragment.setData,videoBeen=" + videoBeen.size());
+        //当获取到数据的时候 我们把 videoBeen (新的集合) 添加到 69行 videoBeen 里面去
+        this.videoBeen.addAll(videoBeen);
+        //通知适配器(notifyDataSetChanged)进行改变
+        homeAdapter.notifyDataSetChanged();
     }
 
     @Override
