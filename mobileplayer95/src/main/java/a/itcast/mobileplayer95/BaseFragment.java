@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import a.itcast.mobileplayer95.utils.LogUtils;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 作者：Magic on 2017/5/17 15:06
@@ -19,7 +18,12 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
 
     protected  View rootView;
-    private Unbinder unbinder;
+//    private Unbinder unbinder;
+
+    //下拉刷新所需要的常量
+    protected static final int SIZE = 10;
+    //下拉刷新所需要的
+    protected int offset;
 
     @Nullable
     @Override
@@ -51,6 +55,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        unbinder.unbind();
+        ButterKnife.unbind(this);
     }
 }

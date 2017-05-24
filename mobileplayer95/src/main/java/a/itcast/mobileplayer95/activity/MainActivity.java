@@ -17,14 +17,15 @@ import com.roughike.bottombar.OnMenuTabClickListener;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.fargment.homepage.HomeFragment;
 import a.itcast.mobileplayer95.fargment.TestFragment;
-import butterknife.BindView;
+import a.itcast.mobileplayer95.fargment.yuedanpage.YueDanFragment;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    @BindView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     Toolbar toolbar;
     private SparseArray<Fragment> sparseArray;
 
@@ -41,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         //初始化 Fragment集合
         sparseArray = new SparseArray<>();
-        sparseArray.append(R.id.bottombar_home,new HomeFragment());
+        sparseArray.append(R.id.bottombar_home,new HomeFragment());//首页
         sparseArray.append(R.id.bottombar_mv,TestFragment.newInstance("MV"));
         sparseArray.append(R.id.bottombar_vbang,TestFragment.newInstance("V榜"));
-        sparseArray.append(R.id.bottombar_yuedan,TestFragment.newInstance("悦单"));
+        sparseArray.append(R.id.bottombar_yuedan,new YueDanFragment());//悦单
 
         //处理底部栏  attach:表示把我当前底部栏附加到一个界面上去
         //savedInstanceState:用来界面销毁时来保存数据用的.

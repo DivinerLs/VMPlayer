@@ -8,12 +8,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import a.itcast.mobileplayer95.R;
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @BindView(R.id.splash_iv_bg)
+    @Bind(R.id.splash_iv_bg)
     ImageView splashIvBg;
 
     @Override

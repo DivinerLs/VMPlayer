@@ -14,7 +14,7 @@ import java.util.List;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.Util;
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -74,16 +74,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.iv_item_logo)
+        @Bind(R.id.iv_item_logo)
         ImageView ivItemLogo;
-        @BindView(R.id.iv_contentimg)
+        @Bind(R.id.iv_contentimg)
         ImageView ivContentimg;
-        @BindView(R.id.iv_type)
+        @Bind(R.id.iv_type)
         ImageView ivType;
-        @BindView(R.id.tv_title)
+        @Bind(R.id.tv_title)
         TextView tvTitle;
-        @BindView(R.id.tv_description)
+        @Bind(R.id.tv_description)
         TextView tvDescription;
+        //这个控件是为了让视频的描述清晰显示
+        @Bind(R.id.viewbg)
+        View viewBg;
 
 
         public MyViewHolder(View itemView) {
@@ -96,6 +99,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             ivContentimg.getLayoutParams().width = point.x;
             ivContentimg.getLayoutParams().height = point.y;
             ivContentimg.requestLayout();
+
+            //这个控件是为了让视频的描述清晰显示
+            viewBg.getLayoutParams().width = point.x;
+            viewBg.getLayoutParams().height = point.y;
+            viewBg.requestLayout();
         }
     }
 

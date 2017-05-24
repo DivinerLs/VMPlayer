@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_8faaa1e7a6f17d5622aff2413a1b8782e1f44494/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -27,6 +18,24 @@
         revision="25.0.0"
         sha1="80940ae6b4deb9b9dda84c1fd14ede9e00ae8d6d">
         <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_fcf46a8a84fdf3e2565af170ca4c100f56f81e10/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-7.0.1_f7168cd35c00c023e8b2d5899d37382d66286617/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_8faaa1e7a6f17d5622aff2413a1b8782e1f44494/classes.dex" />
     </item>
 
 </items>
