@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/Users/Magic/.android/build-cache/02b158575fb3a97c38e421de934ced6b7d2b8325/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3ff72ee77dc0d32d8f00db8073940cf41444a1f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"

@@ -25,9 +25,9 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
     private static final String TAG = "HomeFragment";
 
+    //ListView的进阶版 RecyclerView
     @Bind(R.id.recyclerview)
     RecyclerView recyclerview;
-
     //[下拉刷新] 控件
     @Bind(R.id.refresh)
     SwipeRefreshLayout refreshLayout;
@@ -37,9 +37,9 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
     private HomeAdapter homeAdapter;
 
     private List<VideoBean> videoBeen;
-    //下拉刷新 [是否刷新]
+    // 下拉刷新 [判断:是否刷新]
     private boolean isRefresh;
-    //
+    // [hasMore] 有更多 分页加载
     private boolean hasMore = true;
 
     //生成代码 Command + N | Control + 回车
@@ -56,9 +56,10 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
     protected void initView() {
 
         // [实现HomeMvp.View接口后] 创建 Presenter
-        LogUtils.e(TAG, "HomeFragment.initView,创建 presenter并请求数据");
+       // LogUtils.e(TAG, "HomeFragment.initView,创建 presenter并请求数据");
         presenter = new HomePresenter(this);
-        presenter.loadData(offset,SIZE);
+
+        presenter.loadData(offset,SIZE);//offset的初始值为10  SIZE的常量值为10
 
         //填充 recyclerView 列表
         //设置[布局管理器] 可以设置不同的行为 [列表 九宫格 瀑布流 都可以弄,方向也可以自己设置]
@@ -72,8 +73,10 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
         videoBeen = new ArrayList<>();
         homeAdapter = new HomeAdapter(videoBeen);
         recyclerview.setAdapter(homeAdapter);
-        //上拉刷新
+
+        //上拉刷新 [分页加载] 监听
         recyclerview.addOnScrollListener(new OnMainScrollListener());
+
         // 下拉刷新 监听
         refreshLayout.setOnRefreshListener(new OnMainRefreshListener());
 
@@ -85,20 +88,19 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
      */
     @Override
     public void setData(List<VideoBean> videoBeen) {
-        LogUtils.e(TAG, "HomeFragment.setData,videoBeen=" + videoBeen.size());
+       // LogUtils.e(TAG, "HomeFragment.setData,videoBeen=" + videoBeen.size());
 
         /**
-         * 如果下拉刷新 是真的 就把videoBeen给清空掉
+         * 如果下拉刷新为 true  就把现有的videoBeen给清空掉 清楚原有的数据
          */
         if (isRefresh)
         {
-            this.videoBeen.clear();
-            isRefresh = false;
-            //判断是否刷新  如果为 false 就代表刷新结束了.
-            refreshLayout.setRefreshing(false);
+            this.videoBeen.clear();//清除 videoBeen 现有的 items
+            isRefresh = false; //把下拉刷新的状态改成false
+            refreshLayout.setRefreshing(false); //判断是否刷新  如果为 false 就代表刷新结束了.
         }
         //当数据加载成功的时候 我们才能修改 offset 的值
-        offset = offset+videoBeen.size();
+        offset +=videoBeen.size();
         //如果返回的数据量不等于请求的大小,则说明没有下一页数据了
         hasMore = videoBeen.size() == SIZE;
 
@@ -113,43 +115,6 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
     }
 
-    //上拉刷新
-    private class OnMainScrollListener extends RecyclerView.OnScrollListener {
-
-        /**
-         * 当滚动状态发生变化的时候被调用
-         * @param recyclerView
-         * @param newState 为[0]说明是静止状态
-         *                 为[1]说明是开始滚动
-         *                 为[2]说明是惯性滚动
-         */
-        @Override
-        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-            LogUtils.e(TAG,"OnMainScrollListener.onScrollStateChanged,newState="+newState);
-
-            //获取当前可见的最后一个条目位置
-            LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-            //查找最后一个可见条目的位置
-            int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
-
-            if (newState == 0 && lastVisibleItemPosition == videoBeen.size()-1 && hasMore) {
-                //如果状态变为静止 则准备加载下一页数据
-                presenter.loadData(offset,SIZE);
-            }
-        }
-
-        /**
-         * 不断的获取当前滚动位置时
-         * @param recyclerView
-         * @param dx
-         * @param dy
-         */
-        @Override
-        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-            LogUtils.e(TAG,"OnMainScrollListener.onScrolled," );
-        }
-    }
-
 
     private class OnMainRefreshListener implements SwipeRefreshLayout.OnRefreshListener {
         @Override
@@ -161,7 +126,41 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
             offset = 0;
             presenter.loadData(offset,SIZE);
             isRefresh = true;
+        }
+    }
 
+    //上拉刷新
+    private class OnMainScrollListener extends RecyclerView.OnScrollListener {
+        /**
+         * 当滚动状态发生变化的时候被调用
+         * @param recyclerView
+         * @param newState 为[0]说明是静止状态
+         *                 为[1]说明是开始滚动
+         *                 为[2]说明是惯性滚动
+         */
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            LogUtils.e(TAG,"OnMainScrollListener.onScrollStateChanged,newState="+newState);
+
+            //获取当前可见的最后一个条目item位置
+            LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerview.getLayoutManager();
+            int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();//查找最后一个可见的位置
+
+            if (newState == 0 && lastVisibleItemPosition == videoBeen.size() -1 && hasMore){
+                //如果状态变为静止 [0] 则准备加载下一页数据
+                presenter.loadData(offset,SIZE);
+            }
+        }
+
+        /**
+         * 不断的获取当前滚动位置
+         * @param recyclerView
+         * @param dx
+         * @param dy
+         */
+        @Override
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            LogUtils.e(TAG,"OnMainScrollListener.onScrolled,");
         }
     }
 }

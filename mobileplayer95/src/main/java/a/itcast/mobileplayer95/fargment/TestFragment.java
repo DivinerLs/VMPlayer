@@ -37,12 +37,12 @@ public class TestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, null);
 
-        //TextView tv_text = (TextView) view.findViewById(R.id.tv_text);
+//        TextView tv_text = (TextView) view.findViewById(R.id.tv_text);
 
         //获取初始化参数 content:内容 Arguments:参数
         Bundle args = getArguments();
         String content = args.getString("content");
-        //tv_text.setText(content);
+//        tv_text.setText(content);
         return view;
     }
 }

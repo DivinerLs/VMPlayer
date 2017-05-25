@@ -17,6 +17,7 @@ import a.itcast.mobileplayer95.utils.URLProviderUtil;
 public class HomePresenter implements HomeMvp.Presenter {
 
     private static final String TAG = "HomePresenter";
+
     HomeMvp.View view;
 
     public HomePresenter(HomeMvp.View view) {
@@ -28,9 +29,10 @@ public class HomePresenter implements HomeMvp.Presenter {
 
         String url = URLProviderUtil.getMainPageUrl(offset,size);
 
-        LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据,url="+url);
+        //LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据,url="+url);
 
         HttpManager.getInstance().get(url, new BaseCallBack<List<VideoBean>>() {
+
             @Override
             public void onFailure(int code, Exception e) {
                 view.onError(code,e);
@@ -38,7 +40,7 @@ public class HomePresenter implements HomeMvp.Presenter {
 
             @Override
             public void onSuccess(List<VideoBean> videoBeen) {
-                LogUtils.e(TAG,"HomePresenter.onSuccess,成功获取到数据");
+                //LogUtils.e(TAG,"HomePresenter.onSuccess,成功获取到数据");
                 view.setData(videoBeen);
             }
 

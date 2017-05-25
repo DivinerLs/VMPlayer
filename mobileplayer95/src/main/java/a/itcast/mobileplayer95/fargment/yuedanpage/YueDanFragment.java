@@ -34,6 +34,8 @@ public class YueDanFragment extends BaseFragment implements YueDanMvp.View {
     private YueDanMvp.Presenter presenter;
     private List<YueDanBean.PlayListsBean> list;
     private YueDanAdapter yueDanAdapter;
+    private boolean isRefresh;
+    private boolean hasMore = true;
 
     @Override
     protected int getLayouId() {
@@ -54,15 +56,31 @@ public class YueDanFragment extends BaseFragment implements YueDanMvp.View {
         yueDanAdapter = new YueDanAdapter(list);
         recyclerview.setAdapter(yueDanAdapter);
 
+       // 悦单的 下拉刷新
+        refresh.setOnRefreshListener(new OnYueDanRefreshListener());
+
+        //上来刷新
+        recyclerview.addOnScrollListener(new OnYueDanScrollListener());
 
     }
-
-
-
 
     @Override
     public void setData(List<YueDanBean.PlayListsBean> playLists) {
         LogUtils.e(TAG, "YueDanFragment.setData,playLists=" + playLists.size());
+
+        if (isRefresh)
+        {
+            //针对下拉刷新的处理
+            list.clear();
+            isRefresh = false;
+            refresh.setRefreshing(false);
+        }
+
+        offset += playLists.size();//修改下一页的起始位置
+        hasMore = playLists.size() ==SIZE;//如果返回的数据量不等于请求的大小,则说明没有下一页数据了
+
+        list.addAll(playLists);
+        yueDanAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -71,5 +89,32 @@ public class YueDanFragment extends BaseFragment implements YueDanMvp.View {
     }
 
 
+    private class OnYueDanRefreshListener implements SwipeRefreshLayout.OnRefreshListener {
+        @Override
+        public void onRefresh() {
+            isRefresh = true;
+            offset = 0;
+            presenter.loadData(offset,SIZE);
 
+        }
+    }
+
+    //上拉刷新
+    private class OnYueDanScrollListener extends RecyclerView.OnScrollListener {
+        @Override
+        /**
+         * 滚动状态发生变化时
+         */
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+
+            //获取当前可见的最后一个条目 item 的位置 这里的recyclerview是自己的,不是onScrollStateChanged里面的
+            LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerview.getLayoutManager();
+            int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+
+            //判断是否要获取下一页的数据
+            if (newState == 0 && lastVisibleItemPosition == list.size()-1 && hasMore){
+                presenter.loadData(offset,SIZE);
+            }
+        }
+    }
 }

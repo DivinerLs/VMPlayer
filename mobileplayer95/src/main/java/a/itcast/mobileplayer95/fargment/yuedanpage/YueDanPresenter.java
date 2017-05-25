@@ -36,6 +36,7 @@ public class YueDanPresenter implements YueDanMvp.Presenter {
             @Override
             public void onSuccess(YueDanBean yueDanBean) {
                 view.setData(yueDanBean.getPlayLists());
+                LogUtils.e(TAG,"YueDanPresenter.onSuccess,yueDanBean="+yueDanBean.getPlayLists().size());
             }
 
 

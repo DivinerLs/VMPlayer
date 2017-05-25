@@ -18,12 +18,12 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends Fragment {
 
     protected  View rootView;
-//    private Unbinder unbinder;
 
-    //下拉刷新所需要的常量
+    //下拉刷新所需要的常量 因为每一页都是10个item 所以定义常量为 10
     protected static final int SIZE = 10;
+
     //下拉刷新所需要的
-    protected int offset;
+    protected int offset ;
 
     @Nullable
     @Override
@@ -55,7 +55,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        unbinder.unbind();
         ButterKnife.unbind(this);
     }
 }
