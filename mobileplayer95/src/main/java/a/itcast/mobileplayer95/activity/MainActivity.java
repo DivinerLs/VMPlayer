@@ -17,6 +17,7 @@ import com.roughike.bottombar.OnMenuTabClickListener;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.fargment.homepage.HomeFragment;
 import a.itcast.mobileplayer95.fargment.TestFragment;
+import a.itcast.mobileplayer95.fargment.mvpage.MvFragment;
 import a.itcast.mobileplayer95.fargment.yuedanpage.YueDanFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         //初始化 Fragment集合
         sparseArray = new SparseArray<>();
         sparseArray.append(R.id.bottombar_home,new HomeFragment());//首页
-        sparseArray.append(R.id.bottombar_mv,TestFragment.newInstance("MV"));
+        sparseArray.append(R.id.bottombar_mv,new MvFragment());//MV
         sparseArray.append(R.id.bottombar_vbang,TestFragment.newInstance("V榜"));
         sparseArray.append(R.id.bottombar_yuedan,new YueDanFragment());//悦单
 

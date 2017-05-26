@@ -3,48 +3,219 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Magic/.android/build-cache/02b158575fb3a97c38e421de934ced6b7d2b8325/output/jars/classes.jar"
+        jar="C:\Users\Administrator\.android\build-cache\4e04b0594555fb96a6f972d6a966486e3b12debe\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3ff72ee77dc0d32d8f00db8073940cf41444a1f3/classes.dex" />
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e636f0c8d6399b791f36ad2c5284630aac10660e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Users\Administrator\.android\build-cache\98afd7bc250b1d455004c3b7ad4d45d09cee25a9\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_399892b6eca1bffd046ff10a0a980dd759a561d0/classes.dex" />
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ea73881f96cd4794c80ce609b61ddc6c7e399e1c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Users\Administrator\.android\build-cache\b829586b5e0bc8dd7743190f4961b5ac6b20bbc1\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="80940ae6b4deb9b9dda84c1fd14ede9e00ae8d6d">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_fcf46a8a84fdf3e2565af170ca4c100f56f81e10/classes.dex" />
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b94679b72691b6a2f2286d75023c889b5ff57278\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-7.0.1_f7168cd35c00c023e8b2d5899d37382d66286617/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="/Users/Magic/Desktop/VMPlayer/mobileplayer95/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_8faaa1e7a6f17d5622aff2413a1b8782e1f44494/classes.dex" />
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_1f3ddf859a86296da03fddcf50d19f29d652df81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\8e519a461443061b9769aba1a4eac85ad634fb94\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b6a703d4008a7e2528283d9e57469397af87958b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\a76f815e4883b21eef73bd04cd351d65a37d7a74\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_73dc8595dc0b8d7d95ab3c4ec2e4db193361b839\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\aad9ecce09d66d779f42e0e8758467672bd6344b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7462714290aa0dd638a73ee2b637c6f00fdc5125\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\586f05ba52594d343fe5320bd5a5a9000b3f6868\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f9ef18b3633640422edcf65113dba9676af93d8a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_c410569bd3ae660f2a7eceb3af69efc833b46b70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d32dcaebf92f525ce1facb34b9dad09d220bb221\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f8a9cb25a4e9fb39f8adbe6260e899f9d45cf1f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\77cafd14d0281bb7da9d87873269cfc0cd8f0c34\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0229065d79af33ef80e5170a09184ae59ee4c722\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_e97c4d684058659f4c78fd063d89ce0d8b400297\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da78cef888e1972e6ea91d443f9abcbf3db09cba">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e2a87d048fda8251a4b6fc72c40762e18a34073b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_58700c17074217a7b443677ff5ae228c43c55602\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d61396571ef5ecbe27554b09f275193b17dc5960\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_72dd4fbcb896043ec835b816ac479debe6312dd1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-beta3\constraint-layout-solver-1.0.0-beta3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="22c1e9d26251df254de7cc9dee01f5f134b10eba">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.0-beta3_8768536767f4154ecf45c8f324883d019befc37d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\b093c472cd0094171bbcf55b01af1bd57fe27d93\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b81d40d208a3308c8e81b2cccd3054238a13d140">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_168a26ed034cfc07ab77c44b7d2ed89987cba42c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.6.2_002b7fbf7a0de167c934ae8280ecce1c989b18df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-7.0.1_fc861cbde294a7e4a9efd57936d766cb077b60e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\0f4e6d9c4422280ef3e6061a3b853a2a32106033\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8c7ebbb8b5de2ab493966e676015cf34884b0725\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\68647232818c99ca051c33bca6506449d50c56b2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_28c1c88c4859ab7b06cb7a83c5def8ed6f6ec522\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\dcdc024fdf8b842b63e67e3482862cdf9dd69cae\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="febdca0af7e75d9e2d621fd99be05dfbfd2667ed">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_555fbf987a678dbcd8224ece064376af8b2184a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\4cf7d008501549ccbb5ae78c270bcd8a84537677\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b0145aa8dfdda8d6c15a6a211dc903d0142c8c94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="K:\GitDownload\VMPlayer\mobileplayer95\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.0_cd4211d308d942e8929a1e74c1bdfa93ef15ea3a\classes.dex" />
     </item>
 
 </items>
